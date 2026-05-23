@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travis Chen — HEY!BOSS 銀月數位顧問</title>
+<meta name="description" content="Travis Chen, Founder & CEO of HEY!BOSS 銀月數位顧問。AI 建站 + SEO 成長 + 自動化。">
+<meta property="og:title" content="Travis Chen — HEY!BOSS">
+<meta property="og:description" content="AI 驅動的數位成長引擎。別人做網站，我們做生意。">
+<meta property="og:image" content="https://www.heyboss.com.tw/heyboss/logos/logo_final.png">
+<link rel="icon" href="../heyboss/logos/logo_final.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(160deg, #070e1a 0%, #0c1a33 40%, #101f40 100%);
+  font-family: 'Inter', 'Noto Sans TC', sans-serif;
+  padding: 20px;
+}
+.card {
+  width: 100%; max-width: 420px;
+  background: linear-gradient(160deg, #0d1b34 0%, #12254a 100%);
+  border-radius: 24px; overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);
+  position: relative;
+}
+.card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #005FDF, #EDC626, #005FDF);
+}
+.glow {
+  position: absolute; top: -60px; right: -60px; width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(0,95,223,0.2) 0%, transparent 70%);
+  border-radius: 50%; pointer-events: none;
+}
+.glow-2 {
+  position: absolute; bottom: 100px; left: -40px; width: 150px; height: 150px;
+  background: radial-gradient(circle, rgba(237,198,38,0.08) 0%, transparent 70%);
+  border-radius: 50%; pointer-events: none;
+}
+
+/* Header */
+.header {
+  text-align: center; padding: 40px 30px 24px;
+  position: relative; z-index: 1;
+}
+.hand-logo {
+  width: 80px; height: 80px;
+  filter: drop-shadow(0 4px 16px rgba(0,95,223,0.4));
+  margin-bottom: 16px;
+  animation: wave 2s ease-in-out infinite;
+}
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(12deg); }
+  75% { transform: rotate(-5deg); }
+}
+.brand {
+  font-size: 28px; font-weight: 900; color: #fff;
+  letter-spacing: 3px; margin-bottom: 20px;
+}
+.brand span { color: #EDC626; }
+.name-zh {
+  font-size: 24px; font-weight: 800; color: #fff;
+  margin-bottom: 2px;
+}
+.name-en {
+  font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.4);
+  letter-spacing: 4px; margin-bottom: 12px;
+}
+.title {
+  display: inline-block; font-size: 11px; font-weight: 700;
+  color: #0a1628; background: linear-gradient(135deg, #EDC626, #F7D94E);
+  padding: 5px 18px; border-radius: 20px; letter-spacing: 1px;
+}
+.company {
+  margin-top: 12px; font-size: 12px; color: rgba(255,255,255,0.35);
+  letter-spacing: 1px;
+}
+
+/* Links */
+.links {
+  padding: 8px 24px 24px; position: relative; z-index: 1;
+}
+.link-item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px; margin-bottom: 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px; text-decoration: none;
+  transition: all 0.3s ease; cursor: pointer;
+}
+.link-item:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(0,95,223,0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.link-item:active {
+  transform: translateY(0);
+}
+.link-icon {
+  width: 40px; height: 40px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.link-icon.blue { background: rgba(0,95,223,0.15); }
+.link-icon.green { background: rgba(6,214,160,0.15); }
+.link-icon.purple { background: rgba(139,92,246,0.15); }
+.link-icon.pink { background: rgba(236,72,153,0.15); }
+.link-icon.red { background: rgba(239,68,68,0.15); }
+.link-icon.indigo { background: rgba(99,102,241,0.15); }
+.link-icon.cyan { background: rgba(6,182,212,0.15); }
+.link-label {
+  font-size: 10px; color: rgba(255,255,255,0.35);
+  font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+}
+.link-value {
+  font-size: 14px; color: rgba(255,255,255,0.9); font-weight: 500;
+}
+.link-arrow {
+  margin-left: auto; font-size: 16px; color: rgba(255,255,255,0.2);
+}
+
+/* Social grid */
+.social-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 10px; padding: 0 24px 24px;
+  position: relative; z-index: 1;
+}
+.social-btn {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 14px 8px; background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px; text-decoration: none;
+  transition: all 0.3s; cursor: pointer;
+}
+.social-btn:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(237,198,38,0.3);
+  transform: translateY(-2px);
+}
+.social-btn .s-icon { font-size: 22px; }
+.social-btn .s-name {
+  font-size: 9px; color: rgba(255,255,255,0.4);
+  font-weight: 600; letter-spacing: 0.5px;
+}
+
+/* Footer */
+.footer {
+  text-align: center; padding: 16px 24px 24px;
+  position: relative; z-index: 1;
+}
+.footer p {
+  font-size: 10px; color: rgba(255,255,255,0.15);
+  font-style: italic; letter-spacing: 1px;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="glow"></div>
+  <div class="glow-2"></div>
+
+  <div class="header">
+    <img src="../heyboss/logos/hand_white.png" class="hand-logo" alt="HEY!BOSS">
+    <div class="brand">HEY<span>!</span>BOSS</div>
+    <div class="name-zh">陳柏宇</div>
+    <div class="name-en">TRAVIS CHEN</div>
+    <div class="title">Founder & CEO</div>
+    <div class="company">銀月數位顧問股份有限公司</div>
+  </div>
+
+  <div class="links">
+    <a class="link-item" href="tel:+886912560693">
+      <div class="link-icon blue">📱</div>
+      <div><div class="link-label">Mobile</div><div class="link-value">0912-560-693</div></div>
+      <div class="link-arrow">›</div>
+    </a>
+    <a class="link-item" href="mailto:santafamily.tc@gmail.com">
+      <div class="link-icon purple">✉️</div>
+      <div><div class="link-label">Email</div><div class="link-value">santafamily.tc@gmail.com</div></div>
+      <div class="link-arrow">›</div>
+    </a>
+    <a class="link-item" href="https://www.heyboss.com.tw" target="_blank">
+      <div class="link-icon green">🌐</div>
+      <div><div class="link-label">Website</div><div class="link-value">www.heyboss.com.tw</div></div>
+      <div class="link-arrow">›</div>
+    </a>
+    <a class="link-item" href="https://myaiassist.heyboss.com.tw" target="_blank">
+      <div class="link-icon cyan">🤖</div>
+      <div><div class="link-label">AI Platform</div><div class="link-value">myaiassist.heyboss.com.tw</div></div>
+      <div class="link-arrow">›</div>
+    </a>
+    <a class="link-item" href="https://line.me/R/ti/p/@539qealy" target="_blank">
+      <div class="link-icon green">💬</div>
+      <div><div class="link-label">LINE Official</div><div class="link-value">@539qealy</div></div>
+      <div class="link-arrow">›</div>
+    </a>
+  </div>
+
+  <div class="social-grid">
+    <a class="social-btn" href="https://www.instagram.com/travis.ai.engineer/" target="_blank">
+      <span class="s-icon">📸</span>
+      <span class="s-name">IG</span>
+    </a>
+    <a class="social-btn" href="https://www.facebook.com/profile.php?id=61590350630087" target="_blank">
+      <span class="s-icon">👤</span>
+      <span class="s-name">FB</span>
+    </a>
+    <a class="social-btn" href="https://www.youtube.com/@travis.ai.engineer" target="_blank">
+      <span class="s-icon">🎬</span>
+      <span class="s-name">YT</span>
+    </a>
+    <a class="social-btn" href="https://www.threads.net/@travis.ai.engineer" target="_blank">
+      <span class="s-icon">🧵</span>
+      <span class="s-name">Threads</span>
+    </a>
+    <a class="social-btn" href="https://www.tiktok.com/@travis.ai.engineer" target="_blank">
+      <span class="s-icon">🎵</span>
+      <span class="s-name">TikTok</span>
+    </a>
+  </div>
+
+  <div class="footer">
+    <p>AI 驅動的數位成長引擎 — 別人做網站，我們做生意</p>
+  </div>
+</div>
+</body>
+</html>
